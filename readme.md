@@ -28,7 +28,7 @@ render((
 
 ## API
 
-### <Image/>
+### &lt;Image/&gt;
 
 Besides the props below, it accepts props allowed in [ansi-escapes](https://github.com/sindresorhus/ansi-escapes#options).
 
