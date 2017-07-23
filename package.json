@@ -1,0 +1,87 @@
+{
+	"name": "ink-image",
+	"version": "0.0.0",
+	"description": "Image component for Ink",
+	"license": "MIT",
+	"repository": "kevva/ink-image",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "github.com/kevva"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"build": "babel index.js --out-file=dist.js",
+		"prepublish": "npm run build",
+		"pretest": "npm run build",
+		"test": "xo && ava"
+	},
+	"main": "dist.js",
+	"files": [
+		"dist.js"
+	],
+	"keywords": [
+		"component",
+		"image",
+		"ink"
+	],
+	"dependencies": {
+		"ansi-escapes": "^2.0.0",
+		"lodash.omit": "^4.5.0",
+		"prop-types": "^15.5.10"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"babel-cli": "^6.24.1",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
+		"eslint-config-xo-react": "^0.13.0",
+		"eslint-plugin-react": "^7.1.0",
+		"ink": "^0.3.0",
+		"xo": "*"
+	},
+	"ava": {
+		"babel": {
+			"presets": [
+				"@ava/stage-4"
+			],
+			"plugins": [
+				[
+					"transform-react-jsx",
+					{
+						"pragma": "h",
+						"useBuiltIns": true
+					}
+				]
+			]
+		}
+	},
+	"babel": {
+		"plugins": [
+			[
+				"transform-react-jsx",
+				{
+					"pragma": "h",
+					"useBuiltIns": true
+				}
+			]
+		]
+	},
+	"xo": {
+		"extends": [
+			"xo-react"
+		],
+		"ignores": [
+			"dist.js"
+		],
+		"rules": {
+			"jsx-quotes": ["error", "prefer-single"]
+		},
+		"settings": {
+			"react": {
+				"pragma": "h"
+			}
+		}
+	}
+}
