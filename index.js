@@ -1,32 +1,16 @@
 'use strict';
-const {h, Component} = require('ink');
+const {h} = require('ink');
 const omit = require('lodash.omit');
 const propTypes = require('prop-types');
 const termImg = require('term-img');
 
-class Image extends Component {
-	constructor(props) {
-		super(props);
-
-		const img = termImg.string(props.src, Object.assign(omit(this.props, ['alt', 'src']), {
-			fallback: () => {
-				this.state = {img: props.alt};
-			}
-		}));
-
-		if (img) {
-			this.state = {img};
-		}
-	}
-
-	render(props, {img}) {
-		return (
-			<span>
-				{img}
-			</span>
-		);
-	}
-}
+const Image = props => (
+	<span>
+		{termImg.string(props.src, Object.assign(omit(props, ['alt', 'src']), {
+			fallback: () => props.alt
+		}))}
+	</span>
+);
 
 Image.propTypes = {
 	alt: propTypes.string,

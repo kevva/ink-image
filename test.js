@@ -4,31 +4,23 @@ import test from 'ava';
 import Image from '.';
 
 test('render', t => {
-	let fallback;
-
 	const actual = renderToString(<Image src='./fixture.png'/>);
 	const expected = termImgString('./fixture.png', {
-		fallback: () => {
-			fallback = '';
-		}
+		fallback: () => ''
 	});
 
-	t.is(actual, expected || fallback);
+	t.is(actual, expected);
 });
 
 test('pass props to ansi-escapes', t => {
-	let fallback;
-
 	const actual = renderToString(<Image preserveAspectRatio src='./fixture.png' width='5px'/>);
 	const expected = termImgString('./fixture.png', {
 		width: '5px',
 		preserveAspectRatio: true,
-		fallback: () => {
-			fallback = '';
-		}
+		fallback: () => ''
 	});
 
-	t.is(actual, expected || fallback);
+	t.is(actual, expected);
 });
 
 test.serial('alt text', t => {
