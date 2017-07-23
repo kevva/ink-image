@@ -38,6 +38,12 @@ Type: `string` `Buffer`
 
 Path to an image or a `Buffer`.
 
+#### alt
+
+Type: `string`
+
+Alternative text to show when an image can't be displayed.
+
 
 ## License
 
