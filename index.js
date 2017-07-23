@@ -8,9 +8,9 @@ const propTypes = require('prop-types');
 const getImg = src => typeof src === 'string' ? fs.readFileSync(src) : src;
 
 const Image = props => (
-	<div>
+	<span>
 		{ansiEscapes.image(getImg(props.src), omit(props, 'src'))}
-	</div>
+	</span>
 );
 
 Image.propTypes = {

@@ -6,7 +6,7 @@ import Image from '.';
 
 test('render', t => {
 	const actual = renderToString(<Image src='./fixture.png'/>);
-	const expected = renderToString(<div>{ansiEscapes.image(fs.readFileSync('./fixture.png'))}</div>);
+	const expected = renderToString(<span>{ansiEscapes.image(fs.readFileSync('./fixture.png'))}</span>);
 
 	t.is(actual, expected);
 });
@@ -14,12 +14,12 @@ test('render', t => {
 test('pass props to ansi-escapes', t => {
 	const actual = renderToString(<Image preserveAspectRatio src='./fixture.png' width='5px'/>);
 	const expected = renderToString(
-		<div>
+		<span>
 			{ansiEscapes.image(fs.readFileSync('./fixture.png'), {
 				width: '5px',
 				preserveAspectRatio: true
 			})}
-		</div>
+		</span>
 	);
 
 	t.is(actual, expected);
