@@ -2,6 +2,8 @@
 
 > Image component for [Ink](https://github.com/vadimdemedes/ink)
 
+![](screenshot.png)
+
 *Currently only supported on [iTerm >=3](https://www.iterm2.com/downloads.html).*
 
 
