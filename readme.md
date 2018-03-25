@@ -20,11 +20,11 @@ $ npm install ink-image
 const {h, render} = require('ink');
 const Image = require('ink-image');
 
-render((
+render(
 	<div>
 		<Image preserveAspectRatio src='unicorn.jpg' width='50%'/>
 	</div>
-));
+);
 ```
 
 

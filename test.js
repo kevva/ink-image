@@ -24,7 +24,7 @@ test('pass props to ansi-escapes', t => {
 });
 
 test.serial('alt text', t => {
-	const TERM_PROGRAM = process.env.TERM_PROGRAM;
+	const {TERM_PROGRAM} = process.env;
 	process.env.TERM_PROGRAM = 'Unicorn.app';
 	t.is(renderToString(<Image src='./fixture.png' alt='Hello'/>), 'Hello');
 	process.env.TERM_PROGRAM = TERM_PROGRAM;
