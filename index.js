@@ -1,15 +1,16 @@
 'use strict';
-const {h} = require('ink');
+const React = require('react');
+const {Box} = require('ink');
 const omit = require('lodash.omit');
 const propTypes = require('prop-types');
 const termImg = require('term-img');
 
 const Image = props => (
-	<span>
+	<Box>
 		{termImg.string(props.src, Object.assign(omit(props, ['alt', 'src']), {
 			fallback: () => props.alt
 		}))}
-	</span>
+	</Box>
 );
 
 Image.propTypes = {

@@ -1,4 +1,5 @@
-import {h, renderToString} from 'ink';
+import React from 'react';
+import {renderToString} from 'ink';
 import {string as termImgString} from 'term-img';
 import test from 'ava';
 import Image from '.';
