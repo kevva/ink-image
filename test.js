@@ -1,7 +1,7 @@
+import {serial as test} from 'ava';
 import React from 'react';
 import {render} from 'ink-testing-library';
 import {string as termImgString} from 'term-img';
-import test from 'ava';
 import Image from '.';
 
 test('render', t => {
@@ -24,7 +24,7 @@ test('pass props to ansi-escapes', t => {
 	t.is(actual.lastFrame(), expected);
 });
 
-test.serial('alt text', t => {
+test('alt text', t => {
 	const {TERM_PROGRAM} = process.env;
 	process.env.TERM_PROGRAM = 'Unicorn.app';
 	t.is(render(<Image src='./fixture.png' alt='Hello'/>).lastFrame(), 'Hello');

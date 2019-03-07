@@ -17,28 +17,27 @@ $ npm install ink-image
 ## Usage
 
 ```js
-const {h, render} = require('ink');
-const Image = require('ink-image');
+import React from 'react';
+import {render} from 'ink';
+import Image from 'ink-image';
 
 render(
-	<div>
-		<Image preserveAspectRatio src='unicorn.jpg' width='50%'/>
-	</div>
+	<Image preserveAspectRatio src='unicorn.jpg' width='50%'/>
 );
 ```
 
 
 ## API
 
-### &lt;Image/&gt;
+### `<Image/>`
 
-Besides the props below, it accepts props allowed in [ansi-escapes](https://github.com/sindresorhus/ansi-escapes#options).
+Besides the props below, it accepts props allowed in [`ansi-escapes`](https://github.com/sindresorhus/ansi-escapes#options).
 
 #### src
 
-Type: `string` `Buffer`
+Type: `string | Buffer`
 
-Path to an image or a `Buffer`.
+Path to an image or the image as a `Buffer`.
 
 #### alt
 
