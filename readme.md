@@ -4,15 +4,13 @@
 
 ![](screenshot.png)
 
-*Currently only supported on [iTerm >=3](https://www.iterm2.com/downloads.html).*
-
+In iTerm, the image will be displayed in full resolution, since iTerm has special image support.
 
 ## Install
 
 ```
 $ npm install ink-image
 ```
-
 
 ## Usage
 
@@ -26,26 +24,14 @@ render(
 );
 ```
 
-
 ## API
 
 ### `<Image/>`
 
-Besides the props below, it accepts props allowed in [`ansi-escapes`](https://github.com/sindresorhus/ansi-escapes#options).
+Besides the props below, it accepts props allowed in [`terminal-image`](https://github.com/sindresorhus/terminal-image#options).
 
 #### src
 
 Type: `string | Buffer`
 
-Path to an image or the image as a `Buffer`.
-
-#### alt
-
-Type: `string`
-
-Alternative text to show when an image can't be displayed.
-
-
-## License
-
-MIT © [Kevin Mårtensson](https://github.com/kevva)
+Path to an image or the image as a `Buffer`. Supports PNG images, JPEG images and animated GIFs.
